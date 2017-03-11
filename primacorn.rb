@@ -40,7 +40,7 @@ class Primacom < Test::Unit::TestCase
 
     @driver.find_element(:id, "kontakt-emailnachricht").clear
     @driver.find_element(:id, "kontakt-emailnachricht").send_keys ENV['PRIMACOM_MESSAGE']
-    # @driver.find_element(:name, "submit").click
+    @driver.find_element(:name, "submit").click
     sleep 2
   end
 
