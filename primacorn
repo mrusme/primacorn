@@ -1,0 +1,38 @@
+#!/bin/sh
+
+if [[ -z $1 ]]
+then
+	echo "usage: $0 <host to ping> <loss threshold> <action interval> <command to run>"
+	exit 1
+fi
+
+hostToPing=$1
+threshold=$2
+matches=0
+lastAction=0
+secondsBetweenActions=$3
+
+ping -i 5 $hostToPing | while read packet
+do
+	echo $(date "+%Y-%m-%d %H:%M:%S") $packet | tee -a $HOME/primacorn.log
+
+	if [[ $packet =~ "Request timeout for" ]]
+	then
+		((matches=matches+1))
+
+		if [[ $matches -eq $threshold ]]
+		then
+			currentEpoch=$(date "+%s")
+			difference=$((currentEpoch-lastAction))
+
+			if [[ $difference -gt $lastAction ]]
+			then
+				$4
+
+				lastAction=$(date "+%s")
+			fi
+
+			matches=0
+		fi
+	fi
+done
