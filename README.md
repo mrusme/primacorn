@@ -2,6 +2,8 @@
 
 Test your crappy [Primacom](https://www.primacom.de) cable internet connection for packet losses and automatically report them to Primacom.
 
+![demo](demo.gif "Demo")
+
 ## The story
 
 After Primacom didn't manage it to provide the 200Mbit/s connection I signed up for within 5 months, they refused to let me withdraw from the contract and in addition started charging me money for a stranger's contract. Now the poor connection quality (with up to 80% packet loss on a regular basis) forced me to sign up for an additional VDSL contract.
