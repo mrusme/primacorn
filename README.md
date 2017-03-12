@@ -20,7 +20,7 @@ These scripts can be run in background (preferably on a piece of hardware like t
 
 ### What you need:
 
-- Linux with X11, Chrome/Chromium, Ruby and Selenium with the Chrome web-driver.
+- Linux with X11, Firefox, Ruby and Selenium with the Gecko web-driver.
 - A Raspberry Pi (or similar hardware) to run this stuff on.
 
 ### Usage:
