@@ -6,7 +6,7 @@ require "test/unit"
 class Primacom < Test::Unit::TestCase
 
   def setup
-    @driver = Selenium::WebDriver.for :firefox
+    @driver = Selenium::WebDriver.for :phantomjs
     @base_url = "https://www.primacom.de/"
     @accept_next_alert = true
     @driver.manage.timeouts.implicit_wait = 30
